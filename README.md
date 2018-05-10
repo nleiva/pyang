@@ -3,19 +3,19 @@
 
 ## Running Pyang in a container
 
-This a fork of the [original repo](https://github.com/mbj4668/pyang). A ([Dockerfile](Dockerfile)) has been added to build a Docker image.
+This is a fork of the [original repo](https://github.com/mbj4668/pyang). A ([Dockerfile](Dockerfile)) has been added to build a Docker image.
 
 ```bash
 $ docker build -t pyang .
 ```
 
-Run this image.
+To run this image:
 
 ```bash
 $ docker run -it --rm --name my-pyang pyang
 ```
 
-Use it.
+Finally, to use it:
 
 ```bash
 /usr/src/pyang # git clone https://github.com/YangModels/yang.git
@@ -41,7 +41,9 @@ module: openconfig-lldp
      |  +--ro system-name?                  string
 ```
 
-If you want to remove the image.
+### Cleaninig up
+
+The container is removed when it exits (--rm). To remove the image:
 
 ```bash
 docker rmi pyang
