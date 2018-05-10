@@ -1,6 +1,53 @@
 [![Build Status](https://travis-ci.org/mbj4668/pyang.svg?branch=master)](https://travis-ci.org/mbj4668/pyang)
 [![Coverage Status](https://coveralls.io/repos/mbj4668/pyang/badge.svg)](https://coveralls.io/r/mbj4668/pyang)
 
+## Running Pyang in a container
+
+This a fork of the [original repo](https://github.com/mbj4668/pyang). A ([Dockerfile](Dockerfile)) has been added to build a Docker image.
+
+```bash
+$ docker build -t pyang .
+```
+
+Run this image.
+
+```bash
+$ docker run -it --rm --name my-pyang pyang
+```
+
+Use it.
+
+```bash
+/usr/src/pyang # git clone https://github.com/YangModels/yang.git
+```
+
+```bash
+/usr/src/pyang # pyang -f tree yang/vendor/cisco/xr/641/openconfig-lldp.yang
+...
+module: openconfig-lldp
+  +--rw lldp
+     +--rw config
+     |  +--rw enabled?                      boolean
+     |  +--rw hello-timer?                  uint64
+     |  +--rw suppress-tlv-advertisement*   identityref
+     |  +--rw system-name?                  string
+     |  +--rw system-description?           string
+     |  +--rw chassis-id?                   string
+     |  +--rw chassis-id-type?              oc-lldp-types:chassis-id-type
+     +--ro state
+     |  +--ro enabled?                      boolean
+     |  +--ro hello-timer?                  uint64
+     |  +--ro suppress-tlv-advertisement*   identityref
+     |  +--ro system-name?                  string
+```
+
+If you want to remove the image.
+
+```bash
+docker rmi pyang
+```
+
+
 ## News ##
 **2018-04-25 - Version 1.7.5 released**
   * tree plugin updated to align with RFC 8340
