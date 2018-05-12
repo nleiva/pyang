@@ -6,6 +6,10 @@
 This is a fork of the [original repo](https://github.com/mbj4668/pyang). A ([Dockerfile](Dockerfile)) has been added to build a Docker image.
 
 ```bash
+git clone https://github.com/nleiva/pyang.git && cd pyang
+```
+
+```bash
 $ docker build -t pyang .
 ```
 
