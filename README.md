@@ -3,7 +3,7 @@
 
 ## Running Pyang in a container
 
-This is a fork of the [original repo](https://github.com/mbj4668/pyang). A ([Dockerfile](Dockerfile)) has been added to build a Docker image.
+This is a fork of the [original repo](https://github.com/mbj4668/pyang). A ([Dockerfile](Dockerfile)) has been added to build a Docker image. You can alternatively pull the image from Docker hub: `docker pull nleiva/pyang`.
 
 ```bash
 git clone https://github.com/nleiva/pyang.git && cd pyang
