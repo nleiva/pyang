@@ -26,23 +26,26 @@ Finally, to use it:
 ```
 
 ```bash
-/usr/src/pyang # pyang -f tree yang/vendor/cisco/xr/641/openconfig-lldp.yang
-...
-module: openconfig-lldp
-  +--rw lldp
-     +--rw config
-     |  +--rw enabled?                      boolean
-     |  +--rw hello-timer?                  uint64
-     |  +--rw suppress-tlv-advertisement*   identityref
-     |  +--rw system-name?                  string
-     |  +--rw system-description?           string
-     |  +--rw chassis-id?                   string
-     |  +--rw chassis-id-type?              oc-lldp-types:chassis-id-type
-     +--ro state
-     |  +--ro enabled?                      boolean
-     |  +--ro hello-timer?                  uint64
-     |  +--ro suppress-tlv-advertisement*   identityref
-     |  +--ro system-name?                  string
+/usr/src/pyang # pyang -f tree yang/vendor/cisco/xr/651/Cisco-IOS-XR-ipv4-pim-oper.yang -p yang/vendor/cisco/xr/651/
+module: Cisco-IOS-XR-ipv4-pim-oper
+  +--ro pim-ma
+  |  +--ro active
+  |  |  +--ro interface-table
+  |  |  |  +--ro interface-by-handles
+  |  |  |  |  +--ro interface-by-handle* [interface-handle]
+  |  |  |  |     +--ro interface-handle     uint32
+  |  |  |  |     +--ro rp-address
+  |  |  |  |     |  +--ro af-name?        Pim-afi
+  |  |  |  |     |  +--ro ipv4-address?   inet:ipv4-address
+  |  |  |  |     |  +--ro ipv6-address?   Ipv6-address
+  |  |  |  |     +--ro source-address
+  |  |  |  |     |  +--ro af-name?        Pim-afi
+  |  |  |  |     |  +--ro ipv4-address?   inet:ipv4-address
+  |  |  |  |     |  +--ro ipv6-address?   Ipv6-address
+  |  |  |  |     +--ro interface-name-xr?   xr:Interface-name
+  |  |  |  |     +--ro vrf-name?            string
+  |  |  |  |     +--ro interface-type?      Pim-interface
+  |  |  |  +--ro interface-by-names
 ```
 
 ### Cleaninig up
