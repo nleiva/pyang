@@ -46,6 +46,7 @@ module: Cisco-IOS-XR-ipv4-pim-oper
   |  |  |  |     +--ro vrf-name?            string
   |  |  |  |     +--ro interface-type?      Pim-interface
   |  |  |  +--ro interface-by-names
+  ...
 ```
 
 ### Cleaninig up
